@@ -1,25 +1,27 @@
-class Main {
-
-  //Main Method
+public class Main
+{
     public static void main(String[] args)
     {
         LibraryBook b1 = new LibraryBook(1001, "The Hobbit", "Fantasy");
-        LibraryBook b2 = new LibraryBook(1002, "Java Programming", "Nonfiction");
+        EBook e1 = new EBook(2001, "Digital Java", "Education", 15.7, "www.libraryebooks.com/java");
+        ReferenceBook r1 = new ReferenceBook(3001, "Encyclopedia of Science", "Reference", "Science", true);
 
-        // test print and toString
         b1.print();
-        b2.print();
-        System.out.println(b1.toString());
-        System.out.println(b2.toString());
+        System.out.println(b1);
+        System.out.println();
 
-        // test checkout and return
-        b1.checkout("Jason", "2025-12-20");
-        b1.print();
-        b1.returnBook();
-        b1.print();
+        e1.print();
+        e1.downloadBook();
+        System.out.println(e1);
+        System.out.println();
 
-        // test some getters and setters
-        b2.setGenre("Computer Science");
-        System.out.println("New genre for b2: " + b2.getGenre());
+        r1.print();
+        r1.useInLibrary();
+        r1.checkout("Jason", "2026-03-20");
+        System.out.println(r1);
+        System.out.println();
+
+        b1.checkout("Jason", "2026-03-20");
+        System.out.println(b1);
     }
 }
